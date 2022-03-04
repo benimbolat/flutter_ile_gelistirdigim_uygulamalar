@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Yemekler"),
       ),
       body: FutureBuilder<List<Yemekler>>(
-        future: yemekleriGetir(
+        future: yemekleriGetir(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               var YemekListesi = snapshot.data;
@@ -95,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
             }
           },
         ),
-      ),
     );
   }
 }
