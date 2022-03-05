@@ -1,16 +1,5 @@
-# shared_preferences_login_app
+# Shared Preference ile geliştirilen Login APP
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot 2022-03-05 174725](https://user-images.githubusercontent.com/57150484/156888386-93f9be62-61ea-4abd-af21-43a36fd0f3b4.png)
+![Screenshot 2022-03-05 174615](https://user-images.githubusercontent.com/57150484/156888383-c7777c8c-0d52-43f1-9340-8742e30a3db0.png)
