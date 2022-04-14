@@ -15,102 +15,147 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          //SafeArea Uygulamanın taşmasını engeller
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              children: [
-                //Başlık
-                baslik(),
-                //Banner
-                banner(),
-
-                //Row kutucuklar
-                Padding(
-                  padding: const EdgeInsets.only(top: 40),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      yuvarlakButonlar(
-                          "Kategori", Icons.menu, Kategoriler(), context),
-                      yuvarlakButonlar("Sepetiniz", Icons.shopping_basket,
-                          Kategoriler(), context),
-                      yuvarlakButonlar("Hediyeler", Icons.card_giftcard,
-                          Kategoriler(), context),
-                      yuvarlakButonlar("Daha Fazla", Icons.more_vert_outlined,
-                          Kategoriler(), context),
-                    ],
-                  ),
-                ),
-
-                //Alt Başlık Sales
-                const SizedBox(
-                  height: 20,
-                ),
-
-                const Center(
-                  child: Text(
-                    "Ürünler",
-                    style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w900,
-                        color: Color(0xFF0A1034)),
-                  ),
-                ),
-
-                const SizedBox(
-                  height: 16,
-                ),
-
-                //ürünler
-                Column(
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              //SafeArea Uygulamanın taşmasını engeller
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
                   children: [
-                    Row(
-                      children: [
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
-                        const SizedBox(width: 8),
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
-                      ],
+                    //Başlık
+                    baslik(),
+                    //Banner
+                    banner(),
+
+                    //Row kutucuklar
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          yuvarlakButonlar("Kategori", Icons.menu,
+                              CategoriesPage(), context),
+                          yuvarlakButonlar("Sepetiniz", Icons.shopping_basket,
+                              CategoriesPage(), context),
+                          yuvarlakButonlar("Hediyeler", Icons.card_giftcard,
+                              CategoriesPage(), context),
+                          yuvarlakButonlar(
+                              "Daha Fazla",
+                              Icons.more_vert_outlined,
+                              CategoriesPage(),
+                              context),
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: [
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
-                        const SizedBox(width: 8),
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
-                      ],
+
+                    //Alt Başlık Sales
+                    const SizedBox(
+                      height: 20,
                     ),
-                    Row(
-                      children: [
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
-                        const SizedBox(width: 8),
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
-                      ],
+
+                    const Center(
+                      child: Text(
+                        "Ürünler",
+                        style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w900,
+                            color: Color(0xFF0A1034)),
+                      ),
                     ),
-                    Row(
+
+                    const SizedBox(
+                      height: 16,
+                    ),
+
+                    //ürünler
+                    Column(
                       children: [
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
-                        const SizedBox(width: 8),
-                        urunler("Samsung Telefon", "images/smartphone.png",
-                            "50", ekranBoyutu),
+                        Row(
+                          children: [
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                            const SizedBox(width: 8),
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                            const SizedBox(width: 8),
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                            const SizedBox(width: 8),
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                            const SizedBox(width: 8),
+                            urunler("Samsung Telefon", "images/smartphone.png",
+                                "50", ekranBoyutu),
+                          ],
+                        ),
                       ],
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
+
+            //NavBar
+            //! Stack sayesinde en üstte kalacak.
+            Align(
+              alignment: Alignment.bottomCenter, //alta hizalar
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        offset: const Offset(0, -3),
+                        color: Colors.black.withOpacity(0.25),
+                        blurRadius: 10),
+                  ],
+                  color: const Color(0xFFEFF5FB),
+                ),
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.spaceAround, //Aralarında boşluk
+                  children: [
+                    NavBarSimge(Icons.home_filled, true),
+                    NavBarSimge(Icons.search, false),
+                    NavBarSimge(Icons.shopping_basket, false),
+                    NavBarSimge(Icons.person, false),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+// ignore: non_constant_identifier_names
+Widget NavBarSimge(IconData iconData, bool active) {
+  return Icon(
+    iconData,
+    size: 20,
+    color: Color(active ? 0xFF0001FC : 0xFF0A1034),
+  );
 }
 
 Widget baslik() {
@@ -181,7 +226,7 @@ Widget yuvarlakButonlar(String yuvarlakButonAdi, IconData yuvarlakButonIcon,
         context,
         MaterialPageRoute(
           builder: (context) {
-            return Kategoriler();
+            return CategoriesPage();
           },
         ),
       );
