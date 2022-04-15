@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_e_ticaret_uygulamasi/Kategoriler.dart';
 import 'package:flutter_e_ticaret_uygulamasi/home.dart';
+import 'package:flutter_e_ticaret_uygulamasi/Categories.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

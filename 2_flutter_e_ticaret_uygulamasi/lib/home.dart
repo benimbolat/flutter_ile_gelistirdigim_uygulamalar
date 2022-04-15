@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_e_ticaret_uygulamasi/Kategoriler.dart';
+import 'package:flutter_e_ticaret_uygulamasi/Categories.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
                               CategoriesPage(), context),
                           yuvarlakButonlar("Hediyeler", Icons.card_giftcard,
                               CategoriesPage(), context),
+                              
                           yuvarlakButonlar(
                               "Daha Fazla",
                               Icons.more_vert_outlined,
@@ -190,8 +191,8 @@ Widget banner() {
                   left: 24, right: 36, top: 25, bottom: 18),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
+                children: const [
+                  Text(
                     "Taşınabilir Hapörlör",
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
@@ -199,7 +200,7 @@ Widget banner() {
                       fontSize: 16,
                     ),
                   ),
-                  const Text(
+                  Text(
                     "1500 TL",
                     style: TextStyle(
                       color: Colors.white,
@@ -267,9 +268,9 @@ Widget yuvarlakButonlar(String yuvarlakButonAdi, IconData yuvarlakButonIcon,
 }
 
 Widget urunler(
-  @required String urunAdi,
-  @required String resimYolu,
-  @required String indirimMiktari,
+  String urunAdi,
+  String resimYolu,
+  String indirimMiktari,
   double screenWidth,
 ) {
   return Container(
@@ -285,7 +286,7 @@ Widget urunler(
             color: const Color(0xFFE0ECF8),
           ),
           child: Text(
-            "% ${indirimMiktari}",
+            "% $indirimMiktari",
             style: const TextStyle(color: Color(0xFF1F53E4), fontSize: 12),
           ),
         ),
